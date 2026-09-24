@@ -8,6 +8,7 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.eventhub.pages.LoginPage.EventHubLoginPage;
+import org.eventhub.pages.RegisterPage.EventHubRegisterPage;
 import org.eventhub.utils.AssertionsUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,7 +27,7 @@ public class EventHubBase {
 	public static WebDriver driver;
 	public static EventHubLoginPage loginPage;
 	public static AssertionsUtils utils;
-	
+	public static EventHubRegisterPage registerPage;
 	@BeforeSuite
 	public void inits() {
 		optBrowser("one");
@@ -67,6 +68,7 @@ public class EventHubBase {
 	public static WebDriver commonDrivers(WebDriver driver) {
 		loginPage = new EventHubLoginPage(driver);
 		utils = new AssertionsUtils(driver);
+		registerPage = new EventHubRegisterPage(driver);
 		return driver;
 	}
 	public void takeSnapshot(String imageName) {

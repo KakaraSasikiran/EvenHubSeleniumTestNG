@@ -5,8 +5,8 @@
     <classes>
       <class name="org.eventhub.tests.EventHubLogins">
         <methods>
-          <include name="scenarioOne"/>
           <include name="inits"/>
+          <include name="RegistrationForm"/>
         </methods>
       </class> <!-- org.eventhub.tests.EventHubLogins -->
     </classes>
