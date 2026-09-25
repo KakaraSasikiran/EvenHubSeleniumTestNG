@@ -6,7 +6,7 @@
       <class name="org.eventhub.tests.EventHubLogins">
         <methods>
           <include name="inits"/>
-          <include name="RegistrationForm"/>
+          <include name="testName"/>
         </methods>
       </class> <!-- org.eventhub.tests.EventHubLogins -->
     </classes>
