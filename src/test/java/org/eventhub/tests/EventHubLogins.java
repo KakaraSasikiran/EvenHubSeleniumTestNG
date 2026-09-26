@@ -61,7 +61,10 @@ public class EventHubLogins extends EventHubBase {
 		WebElement el = driver.findElement(By.xpath("(//button[text()='Edit'])[1]"));
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 //		wait.until(ExpectedConditions.elementToBeClickable(el)).click();
-		editDashboard.clickDelete();
+//		editDashboard.clickDelete();
+		editDashboard.clickEdit();
+		editDashboard.updateNewEvent("Hellos", "Hellos", "Sports", "HiTech", "Hitech City", "10-11-2026", "08-22", "PM", "121",
+				"100", "https://www.google.com");
 		
 	}
 }
