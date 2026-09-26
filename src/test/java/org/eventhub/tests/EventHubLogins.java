@@ -6,7 +6,10 @@ import java.util.List;
 import org.eventhub.bases.EventHubBase;
 import org.eventhub.utils.AssertionsUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -53,10 +56,12 @@ public class EventHubLogins extends EventHubBase {
 	@Test
 	public void testName() throws Exception {
 		loginPage.performLogin("admin@gmail.com", "Admin@12345");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		dashboard.selectAdminDropdown("Manage Events");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
-		List<WebElement> ls = driver.findElements(By.xpath("//table[@class='w-full text-sm']//tbody//tr"));
-		ls.stream().filter(p -> p.getText().contains("$121")).findFirst()
-				.ifPresent(p -> p.findElement(By.xpath(".//button[normalize-space()='Edit']")).click());
+		WebElement el = driver.findElement(By.xpath("(//button[text()='Edit'])[1]"));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//		wait.until(ExpectedConditions.elementToBeClickable(el)).click();
+		editDashboard.clickDelete();
+		
 	}
 }

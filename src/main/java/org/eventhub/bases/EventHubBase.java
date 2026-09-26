@@ -41,6 +41,7 @@ public class EventHubBase {
 	@BeforeSuite
 	public void inits() {
 		optBrowser("one");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	public static Properties getPropertiesData(String fileName) {
 		
@@ -95,5 +96,6 @@ public class EventHubBase {
 			e.printStackTrace();
 		}
 	}
+	
 	
 }
