@@ -2,6 +2,7 @@ package org.eventhub.pages.RegisterPage;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,12 +19,18 @@ public class EventHubRegisterPage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		PageFactory.initElements(driver, this);
 	}
+//	By login = By.id("id");
+//	public void loginfu() {
+//		driver.findElement(login).click();
+//	}
 	
 	@FindBy(id = "register-email")
 	private WebElement email;
 	
 	@FindBy(id = "register-password")
 	private WebElement password;
+	
+	
 	
 	@FindBy(xpath = "//input[@placeholder='Repeat your password']")
 	private WebElement confirmpasswords;
